@@ -1,12 +1,24 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const App = () => {
+import {Home, Profile} from './screens';
+
+const Stack = createStackNavigator();
+const NavigationOptions = {headerShown: false};
+
+function App() {
   return (
-    <View>
-      <Text>FoodShare App</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={NavigationOptions}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
+}
 
 export default App;
