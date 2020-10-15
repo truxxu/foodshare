@@ -1,12 +1,40 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, {useContext} from 'react';
+import {StyleSheet, View, Text, Button} from 'react-native';
 
-const Profile = () => {
+import {Context as AuthContext} from '../context/AuthContext';
+import {InputError, Spinner} from '../atoms';
+
+const Profile = ({navigation}) => {
+  const {logOutUser, state} = useContext(AuthContext);
+  const {isLoading, error} = state;
+  const user = state.user.displayName || 'User';
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
-    <View>
-      <Text>Profile goes here</Text>
+    <View style={styles.container}>
+      <Text style={styles.textStyle}>Hello, {user}</Text>
+      <InputError text={error} error={error} />
+      <Button title="Logout" onPress={logOutUser} />
     </View>
   );
 };
 
-export default Profile;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 35,
+    backgroundColor: '#fff',
+  },
+  textStyle: {
+    fontSize: 15,
+    marginBottom: 20,
+  },
+});
+
+export {Profile};
