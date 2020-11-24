@@ -2,7 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {Home, Profile, List, ListingsMap} from '../screens';
+import {Home, Profile, List} from '../screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,22 +17,19 @@ const MainFlow = () => {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'Profile') {
             iconName = focused ? 'account' : 'account-outline';
-          } else if (route.name === 'List') {
+          } else if (route.name === 'Listings') {
             iconName = focused ? 'clipboard-list' : 'clipboard-list-outline';
-          } else if (route.name === 'Map') {
-            iconName = focused ? 'map-marker' : 'map-marker-outline';
           }
 
           return <Icon name={iconName} size={size} color={color} />;
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'blue',
+        activeTintColor: '#0091EA',
         inactiveTintColor: 'gray',
       }}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Map" component={ListingsMap} />
-      <Tab.Screen name="List" component={List} />
+      <Tab.Screen name="Listings" component={List} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
