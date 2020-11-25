@@ -1,5 +1,7 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {TouchableOpacity, StyleSheet} from 'react-native';
+
+import {Spacing} from '../styles';
 
 const RoundButton = ({children, color}) => {
   return (
@@ -17,20 +19,12 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 100,
-    width: 100,
-    borderRadius: 50,
+    ...Spacing.centered,
+    height: 50,
+    width: 50,
+    borderRadius: 25,
     margin: 5,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    ...Spacing.shadow,
   },
 });
 

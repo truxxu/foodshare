@@ -1,21 +1,47 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 
-import {RoundButton} from '../atoms';
+import {ListButtons} from '../molecules';
+import {ListingCard} from '../atoms';
 
 const List = () => {
   return (
-    <View>
-      <Text>List Screen</Text>
-      <RoundButton color="green">
-        <Icon name="text-box-plus" size={50} color="white" />
-      </RoundButton>
-      <RoundButton color="blue">
-        <Icon name="map" size={50} color="white" />
-      </RoundButton>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ListButtons />
+      <ScrollView>
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+        <ListingCard />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 10,
+  },
+});
 
 export {List};
