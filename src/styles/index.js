@@ -1,3 +1,4 @@
 import * as Spacing from './spacing';
+import * as Typography from './typography';
 
-export {Spacing};
+export {Spacing, Typography};

@@ -1,38 +1,13 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {StyleSheet, SafeAreaView} from 'react-native';
 
-import {ListButtons} from '../molecules';
-import {ListingCard} from '../atoms';
+import {ListButtons, CardList} from '../molecules';
 
 const List = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ListButtons />
-      <ScrollView>
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-        <ListingCard />
-      </ScrollView>
+      <CardList />
     </SafeAreaView>
   );
 };
